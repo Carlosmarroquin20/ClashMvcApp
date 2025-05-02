@@ -16,7 +16,7 @@ public class HomeController : Controller
     //Pagina principal de index o si no se pone /
     public IActionResult Index()
     {
-        ViewData["Mensaje"] = "Bienvenido al catalogo de Clash Royale";
+        ViewData["Mensaje"] = "Bienvenido al catalogo de Clash Royale By Ema322";
         return View();
     }
 
