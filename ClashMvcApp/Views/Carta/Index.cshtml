@@ -1,9 +1,23 @@
-﻿@model IEnumerable<string>
+﻿@model IEnumerable<ClashMvcApp.Models.Carta>
 
-<h1>Card Catalog</h1>
-<ul>
-    @foreach (var carta in Model)
-    {
-        <li>@carta</li>
-    }
-</ul>
+<h1>Catálogo de Cartas de Clash Royale</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Rareza</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var carta in Model)
+        {
+            <tr>
+                <td>@carta.Id</td>
+                <td>@carta.Name</td>
+                <td>@carta.Rarity</td>
+            </tr>
+        }
+    </tbody>
+</table>

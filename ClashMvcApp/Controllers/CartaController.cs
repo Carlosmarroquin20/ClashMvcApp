@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using ClashMvcApp.Models; 
 
 namespace ClashMvcApp.Controllers
 {
@@ -8,13 +9,14 @@ namespace ClashMvcApp.Controllers
         public IActionResult Index()
         {
             // Lista estática de ejemplo
-            var cartas = new List<string>
+            var cartas = new List<Carta>
             {
-                "Archers",
-                "Knight",
-                "Giant",
-                "Wizard",
-                "Tesla"
+                new Carta(1, "Arqueras", "Comun"),
+                new Carta(2, "Caballero", "Comun"),
+                new Carta(3, "Gigante", "Especial"),
+                new Carta(4, "Mago", "Especial"),
+                new Carta(5, "Tesla", "Comun"),
+
             };
             return View(cartas);
         }
