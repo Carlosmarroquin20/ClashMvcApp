@@ -1,4 +1,21 @@
-﻿@model IEnumerable<ClashMvcApp.Models.Carta>
+﻿@removeTagHelper "Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers"
+@removeTagHelper "Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model IEnumerable<ClashMvcApp.Models.Carta>
+
+@{
+    // Leemos el filtro guardado en ViewData por el controlador
+    var currentRarity = (ViewData["CurrentRarity"] as string) ?? "";
+}
+
+<form action="@Url.Action("Index", "Carta")" method="get" class="mb-3">
+    <label for="rarity">Filtrar por rareza:</label>
+    <select id="rarity" name="rarity" class="form-select d-inline-block w-auto ms-2">
+        <option value="" @(string.IsNullOrEmpty(currentRarity) ? " selected" : "")>— Todas —</option>
+        <option value="Comun" @(currentRarity == "Comun" ? " selected" : "")>Comun</option>
+        <option value="Especial" @(currentRarity == "Especial" ? " selected" : "")>Especial</option>
+    </select>
+    <button type="submit" class="btn btn-primary ms-2">Filtrar</button>
+</form>
 
 <h1>Catálogo de Cartas de Clash Royale</h1>
 
@@ -8,7 +25,7 @@
             <th>#</th>
             <th>Nombre</th>
             <th>Rareza</th>
-            <th>Acciones</th> 
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>

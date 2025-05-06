@@ -16,6 +16,8 @@ public class HomeController : Controller
     //Pagina principal de index
     public IActionResult Index()
     {
+        _logger.LogInformation("Accediendo a la pagina de inicio");
+
         ViewData["Mensaje"] = "Bienvenido al catalogo de Clash Royale By Ema322";
         return View();
     }
