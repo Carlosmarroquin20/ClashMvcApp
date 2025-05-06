@@ -1,0 +1,16 @@
+﻿@model ClashMvcApp.Models.Carta
+
+<h1>Detalles de la Carta</h1>
+
+<dl class="row">
+	<dt class="col-sm-2">ID</dt>
+	<dd class="col-sm-10">@Model.Id</dd>
+
+	<dt class="col-sm-2">Nombre</dt>
+	<dd class="col-sm-10">@Model.Name</dd>
+
+	<dt class="col-sm-2">Rareza</dt>
+	<dd class="col-sm-10">@Model.Rarity</dd>
+</dl>
+
+<a asp-action="Index">← Volver al catálogo</a>

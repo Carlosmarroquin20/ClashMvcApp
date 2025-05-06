@@ -13,7 +13,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    //Pagina principal de index o si no se pone /
+    //Pagina principal de index
     public IActionResult Index()
     {
         ViewData["Mensaje"] = "Bienvenido al catalogo de Clash Royale By Ema322";

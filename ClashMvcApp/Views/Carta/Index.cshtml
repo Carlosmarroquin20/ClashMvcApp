@@ -8,6 +8,7 @@
             <th>#</th>
             <th>Nombre</th>
             <th>Rareza</th>
+            <th>Acciones</th> 
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,9 @@
                 <td>@carta.Id</td>
                 <td>@carta.Name</td>
                 <td>@carta.Rarity</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@carta.Id">Ver detalles</a>
+                </td>
             </tr>
         }
     </tbody>
