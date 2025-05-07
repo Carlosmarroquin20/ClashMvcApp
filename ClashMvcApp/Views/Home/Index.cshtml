@@ -1,13 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p class="lead">@ViewData["Mensaje"]</p>
-
-    <!-- Botón que lleva al catálogo de cartas -->
-    <a asp-controller="Carta" asp-action="Index" class="btn btn-primary">
-        Ver catálogo de cartas
-    </a>
-</div>
+<!-- Hero Section -->
+<section class="hero-section text-white d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="display-2 fw-bold mb-3">Clash Royale Card Catalog</h1>
+        <p class="lead mb-4">Explora y filtra las cartas más épicas de Clash Royale</p>
+        <a asp-controller="Carta" asp-action="Index" class="btn btn-lg btn-primary">
+            Ver catálogo de cartas
+        </a>
+    </div>
+</section>

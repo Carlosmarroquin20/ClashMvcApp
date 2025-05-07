@@ -39,3 +39,23 @@ body {
     .card-carta.especial {
         border-top: 3px solid #0d6efd; /* azul intenso */
     }
+
+
+/* Hero section en Home */
+.hero-section {
+    background: url('/images/hero-bg.jpg') center/cover no-repeat;
+    height: calc(100vh - 56px); /* resta la altura del navbar */
+}
+
+    .hero-section .container {
+        padding-top: 4rem;
+    }
+
+    .hero-section h1 {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .hero-section p {
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
