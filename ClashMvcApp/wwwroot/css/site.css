@@ -40,49 +40,45 @@ body {
         border-top: 3px solid #0d6efd; /* azul intenso */
     }
 
-/* Hero section en Home con overlay para contraste */
+/* Hero colorido */
 .hero-section {
-    position: relative;
-    background: url('/images/hero-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(135deg, #FFAFBD 0%, #ffc3a0 50%, #2193b0 100%);
     height: calc(100vh - 56px);
     overflow: hidden;
 }
 
-    /* Capa oscura semitransparente */
     .hero-section::before {
+        /* opcional: un suave patrón semitransparente */
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1;
+        background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
     }
 
-    /* Contenido encima del overlay */
-    .hero-section .container {
+    .hero-section .hero-content {
         position: relative;
         z-index: 2;
-        padding-top: 4rem;
     }
 
-    /* Título y subtítulo más nítidos */
     .hero-section h1 {
-        color: #fff;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     .hero-section p {
-        color: #f0f0f0;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        font-size: 1.25rem;
     }
 
-    /* Botón con borde más claro */
-    .hero-section .btn-primary {
-        background-color: #0d6efd;
-        border-color: #0b5ed7;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
+.btn-warning {
+    background-color: #ffdd57;
+    border-color: #ffdd57;
+    color: #212529;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-        .hero-section .btn-primary:hover {
-            background-color: #0b5ed7;
-            border-color: #0a58ca;
-        }
+    .btn-warning:hover {
+        background-color: #ffd627;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        transform: translateY(-2px);
+    }
