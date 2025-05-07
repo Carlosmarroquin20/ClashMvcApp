@@ -20,3 +20,22 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Cards de Clash */
+.card-carta {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .card-carta:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* Bordes según rareza */
+    .card-carta.comun {
+        border-top: 3px solid #6c757d; /* gris */
+    }
+
+    .card-carta.especial {
+        border-top: 3px solid #0d6efd; /* azul intenso */
+    }

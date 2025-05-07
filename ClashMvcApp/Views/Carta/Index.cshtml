@@ -3,13 +3,12 @@
 @model IEnumerable<ClashMvcApp.Models.Carta>
 
 @{
-    // Leemos el filtro guardado en ViewData por el controlador
     var currentRarity = (ViewData["CurrentRarity"] as string) ?? "";
 }
 
-<form action="@Url.Action("Index", "Carta")" method="get" class="mb-3">
-    <label for="rarity">Filtrar por rareza:</label>
-    <select id="rarity" name="rarity" class="form-select d-inline-block w-auto ms-2">
+<form action="@Url.Action("Index", "Carta")" method="get" class="mb-4 text-end">
+    <label for="rarity" class="me-2">Filtrar por rareza:</label>
+    <select id="rarity" name="rarity" class="form-select d-inline-block w-auto">
         <option value="" @(string.IsNullOrEmpty(currentRarity) ? " selected" : "")>— Todas —</option>
         <option value="Comun" @(currentRarity == "Comun" ? " selected" : "")>Comun</option>
         <option value="Especial" @(currentRarity == "Especial" ? " selected" : "")>Especial</option>
@@ -17,28 +16,24 @@
     <button type="submit" class="btn btn-primary ms-2">Filtrar</button>
 </form>
 
-<h1>Catálogo de Cartas de Clash Royale</h1>
+<h1 class="mb-4">Catálogo de Cartas de Clash Royale</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Rareza</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var carta in Model)
-        {
-            <tr>
-                <td>@carta.Id</td>
-                <td>@carta.Name</td>
-                <td>@carta.Rarity</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@carta.Id">Ver detalles</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="row">
+    @foreach (var carta in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card card-carta @(carta.Rarity.ToLower()) h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@carta.Name</h5>
+                    <p class="card-text mt-auto">
+                        <span class="badge bg-secondary text-uppercase">@carta.Rarity</span>
+                    </p>
+                    <a asp-action="Details" asp-route-id="@carta.Id"
+                       class="btn btn-outline-primary mt-2 align-self-start">
+                        Ver detalles
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
