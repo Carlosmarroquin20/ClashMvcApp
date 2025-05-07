@@ -4,6 +4,10 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-	<p class="lead">@ViewData["Mensaje"]</p>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p class="lead">@ViewData["Mensaje"]</p>
+
+    <!-- Botón que lleva al catálogo de cartas -->
+    <a asp-controller="Carta" asp-action="Index" class="btn btn-primary">
+        Ver catálogo de cartas
+    </a>
 </div>
