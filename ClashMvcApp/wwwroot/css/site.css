@@ -40,22 +40,49 @@ body {
         border-top: 3px solid #0d6efd; /* azul intenso */
     }
 
-
-/* Hero section en Home */
+/* Hero section en Home con overlay para contraste */
 .hero-section {
+    position: relative;
     background: url('/images/hero-bg.jpg') center/cover no-repeat;
-    height: calc(100vh - 56px); /* resta la altura del navbar */
+    height: calc(100vh - 56px);
+    overflow: hidden;
 }
 
+    /* Capa oscura semitransparente */
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    /* Contenido encima del overlay */
     .hero-section .container {
+        position: relative;
+        z-index: 2;
         padding-top: 4rem;
     }
 
+    /* Título y subtítulo más nítidos */
     .hero-section h1 {
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        color: #fff;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
     }
 
     .hero-section p {
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        color: #f0f0f0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
 
+    /* Botón con borde más claro */
+    .hero-section .btn-primary {
+        background-color: #0d6efd;
+        border-color: #0b5ed7;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+        .hero-section .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
